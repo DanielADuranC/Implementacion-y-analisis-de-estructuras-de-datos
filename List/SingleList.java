@@ -44,7 +44,7 @@ public class SingleList<T> {
 
     public T popFront() {
         if (isEmpty()) {
-            return null;
+            throw new IllegalStateException("La lista está vacía, no se puede eliminar");
         }
         T value = head.key;
         head = head.next;
@@ -54,7 +54,7 @@ public class SingleList<T> {
 
     public T popBack() {
         if (isEmpty()) {
-            return null;
+            throw new IllegalStateException("La lista está vacía, no se puede eliminar");
         }
 
         if (head.next == null) {

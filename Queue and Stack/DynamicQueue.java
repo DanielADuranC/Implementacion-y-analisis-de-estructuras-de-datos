@@ -41,7 +41,7 @@ public class DynamicQueue<T> implements MyQueue<T> {
     @Override
     public T dequeue() {
         if (isEmpty()) {
-            return null;
+            throw new IllegalStateException("Cola vacia");
         }
         T objeto = queue[front];
         queue[front] = null; 
@@ -53,7 +53,7 @@ public class DynamicQueue<T> implements MyQueue<T> {
     @Override
     public T front() {
         if (isEmpty()) {
-            return null;
+            throw new IllegalStateException("Cola vacia");
         }
         return queue[front];
     }

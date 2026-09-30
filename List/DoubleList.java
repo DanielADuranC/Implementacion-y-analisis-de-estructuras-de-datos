@@ -44,10 +44,10 @@ public class DoubleList<T> {
 
     public T popFront() {
         if (isEmpty()) {
-            return null;
+            throw new IllegalStateException("La lista está vacía, no se puede eliminar");
         }
         T value = head.key;
-        head = head.next;
+        head = head.next;   
         if (head != null) {
             head.prev = null;
         }
@@ -57,7 +57,7 @@ public class DoubleList<T> {
 
     public T popBack() {
         if (isEmpty()) {
-            return null;
+            throw new IllegalStateException("La lista está vacía, no se puede eliminar");
         }
         if (head.next == null) {
             T value = head.key;

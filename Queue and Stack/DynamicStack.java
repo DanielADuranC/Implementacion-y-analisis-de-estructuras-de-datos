@@ -36,7 +36,7 @@ public class DynamicStack<T> implements MyStack<T> {
     @Override
     public T pop() {
         if (isEmpty()) {
-            return null;
+            throw new IllegalStateException("Pila vacia");
         }
         top--;
         T objeto = stack[top];
@@ -47,7 +47,7 @@ public class DynamicStack<T> implements MyStack<T> {
     @Override
     public T peek() {
         if (isEmpty()) {
-            return null;
+            throw new IllegalStateException("Pila vacia");
         }
         return stack[top - 1];
     }

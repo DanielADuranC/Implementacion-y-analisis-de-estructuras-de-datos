@@ -45,7 +45,7 @@ public class DoubleListTail<T> {
 
     public T popFront() {
         if (isEmpty()) {
-            return null;
+            throw new IllegalStateException("La lista está vacía, no se puede eliminar");
         }
         count--;
         T key = head.key;
@@ -61,7 +61,7 @@ public class DoubleListTail<T> {
 
     public T popBack() {
         if (isEmpty()) {
-            return null;
+            throw new IllegalStateException("La lista está vacía, no se puede eliminar");
         }
         count--;
         T key = tail.key;
